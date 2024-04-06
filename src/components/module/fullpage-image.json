@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_module_fullpage_images",
+  "info": {
+    "displayName": "Images pleine page",
+    "description": "",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "medias": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "backgroundColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color",
+      "default": "#FFFFFF"
+    },
+    "numberOfImages": {
+      "type": "integer",
+      "required": true,
+      "default": 1,
+      "max": 5,
+      "min": 0
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "collectionName": "components_module_text_onlies",
+  "info": {
+    "displayName": "Texte seul",
+    "icon": "feather",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "textColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": true,
+      "customField": "plugin::color-picker.color",
+      "default": "#000000"
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "alignment": {
+      "type": "enumeration",
+      "enum": [
+        "Left",
+        "Center",
+        "Right",
+        "Justify"
+      ],
+      "required": true,
+      "default": "Justify"
+    },
+    "backgroundColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": true,
+      "customField": "plugin::color-picker.color",
+      "default": "#FFFFFF"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "font": {
+      "type": "enumeration",
+      "enum": [
+        "Roboto (sans serif)",
+        "Open Sans (sans serif)",
+        "Montserrat (sans serif)",
+        "Lato (sans serif)",
+        "Roboto Condensed (sans serif)",
+        "Barlow Condensed (sans serif)",
+        "Saira Condensed (sans serif)",
+        "Playfare Display (serif)",
+        "Merriweather (serif)",
+        "PT Serif (serif)",
+        "EB Garamond (serif)",
+        "Dancing Script (handwriting)",
+        "Pacifico (handwriting)",
+        "Caveat (handwriting)",
+        "Permanent Marker (handwriting)",
+        "Satisfy (handwriting)"
+      ],
+      "default": "Roboto (sans serif)",
+      "required": true
+    }
+  }
+}

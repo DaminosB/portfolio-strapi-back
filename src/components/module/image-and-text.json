@@ -1,0 +1,77 @@
+{
+  "collectionName": "components_module_image_and_texts",
+  "info": {
+    "displayName": "Image et texte",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "medias": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "backgroundColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color",
+      "required": true,
+      "default": "#FFFFFF"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "textAndImagesPositions": {
+      "type": "enumeration",
+      "enum": [
+        "Image - Texte",
+        "Texte - Image"
+      ],
+      "default": "Image - Texte",
+      "required": true
+    },
+    "textColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color",
+      "default": "#000000"
+    },
+    "font": {
+      "type": "enumeration",
+      "enum": [
+        "Roboto (sans serif)",
+        "Open Sans (sans serif)",
+        "Montserrat (sans serif)",
+        "Lato (sans serif)",
+        "Roboto Condensed (sans serif)",
+        "Barlow Condensed (sans serif)",
+        "Saira Condensed (sans serif)",
+        "Playfare Display (serif)",
+        "Merriweather (serif)",
+        "PT Serif (serif)",
+        "EB Garamond (serif)",
+        "Dancing Script (handwriting)",
+        "Pacifico (handwriting)",
+        "Caveat (handwriting)",
+        "Permanent Marker (handwriting)",
+        "Satisfy (handwriting)"
+      ],
+      "default": "Roboto (sans serif)",
+      "required": true
+    }
+  }
+}
