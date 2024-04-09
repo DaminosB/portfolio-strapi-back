@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_parameters",
+  "info": {
+    "singularName": "site-parameter",
+    "pluralName": "site-parameters",
+    "displayName": "Site Parameter"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pageTitle": {
+      "type": "string",
+      "required": true
+    },
+    "pageDescription": {
+      "type": "text"
+    }
+  }
+}

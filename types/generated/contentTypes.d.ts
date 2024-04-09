@@ -836,7 +836,6 @@ export interface ApiProfileProfile extends Schema.SingleType {
     displayName: Attribute.String & Attribute.Required;
     logo: Attribute.Media;
     socialURLs: Attribute.Component<'profile.social-medias'>;
-    pageTitle: Attribute.String & Attribute.Required;
     email: Attribute.Email & Attribute.Required;
     homePageBackground: Attribute.Media;
     telephone: Attribute.String;
@@ -928,6 +927,36 @@ export interface ApiProjectProject extends Schema.CollectionType {
   };
 }
 
+export interface ApiSiteParameterSiteParameter extends Schema.SingleType {
+  collectionName: 'site_parameters';
+  info: {
+    singularName: 'site-parameter';
+    pluralName: 'site-parameters';
+    displayName: 'Site Parameter';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    pageTitle: Attribute.String & Attribute.Required;
+    pageDescription: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::site-parameter.site-parameter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::site-parameter.site-parameter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Schema.CollectionType {
   collectionName: 'tags';
   info: {
@@ -976,6 +1005,7 @@ declare module '@strapi/types' {
       'api::page.page': ApiPagePage;
       'api::profile.profile': ApiProfileProfile;
       'api::project.project': ApiProjectProject;
+      'api::site-parameter.site-parameter': ApiSiteParameterSiteParameter;
       'api::tag.tag': ApiTagTag;
     }
   }

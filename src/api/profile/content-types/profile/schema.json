@@ -30,10 +30,6 @@
       "repeatable": false,
       "component": "profile.social-medias"
     },
-    "pageTitle": {
-      "type": "string",
-      "required": true
-    },
     "email": {
       "type": "email",
       "required": true
@@ -74,11 +70,12 @@
       "default": "Roboto (sans serif)"
     },
     "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
