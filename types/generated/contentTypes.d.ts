@@ -862,6 +862,7 @@ export interface ApiProfileProfile extends Schema.SingleType {
     > &
       Attribute.Required &
       Attribute.DefaultTo<'Roboto (sans serif)'>;
+    cover: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

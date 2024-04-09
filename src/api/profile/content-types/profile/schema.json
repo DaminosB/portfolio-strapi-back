@@ -72,6 +72,13 @@
       ],
       "required": true,
       "default": "Roboto (sans serif)"
+    },
+    "cover": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
