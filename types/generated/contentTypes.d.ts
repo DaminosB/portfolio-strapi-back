@@ -908,6 +908,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
         'module.images-taille-normale'
       ]
     >;
+    cover: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -41,6 +41,14 @@
         "module.image-and-text",
         "module.images-taille-normale"
       ]
+    },
+    "cover": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
