@@ -968,7 +968,7 @@ export interface ApiTagTag extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    tag: Attribute.String & Attribute.Required & Attribute.Unique;
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
     projects: Attribute.Relation<
       'api::tag.tag',
       'manyToMany',
