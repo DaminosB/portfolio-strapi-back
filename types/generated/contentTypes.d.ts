@@ -848,7 +848,6 @@ export interface ApiProfileProfile extends Schema.SingleType {
         'Roboto Condensed (sans serif)',
         'Barlow Condensed (sans serif)',
         'Saira Condensed (sans serif)',
-        'Playfare Display (serif)',
         'Merriweather (serif)',
         'PT Serif (serif)',
         'EB Garamond (serif)',
