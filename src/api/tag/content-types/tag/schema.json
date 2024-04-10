@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Tag": {
+    "tag": {
       "type": "string",
       "unique": true,
       "required": true
