@@ -834,54 +834,9 @@ export interface ApiProfileProfile extends Schema.SingleType {
   };
   attributes: {
     displayName: Attribute.String & Attribute.Required;
-    logo: Attribute.Media;
     socialURLs: Attribute.Component<'profile.social-medias'>;
     email: Attribute.Email & Attribute.Required;
-    homePageBackground: Attribute.Media;
     telephone: Attribute.String;
-    defaultFont: Attribute.Enumeration<
-      [
-        'Roboto (sans serif)',
-        'Open Sans (sans serif)',
-        'Montserrat (sans serif)',
-        'Lato (sans serif)',
-        'Roboto Condensed (sans serif)',
-        'Barlow Condensed (sans serif)',
-        'Saira Condensed (sans serif)',
-        'Merriweather (serif)',
-        'PT Serif (serif)',
-        'EB Garamond (serif)',
-        'Dancing Script (handwriting)',
-        'Pacifico (handwriting)',
-        'Caveat (handwriting)',
-        'Permanent Marker (handwriting)',
-        'Satisfy (handwriting)'
-      ]
-    > &
-      Attribute.Required &
-      Attribute.DefaultTo<'Roboto (sans serif)'>;
-    cover: Attribute.Media;
-    headerFont: Attribute.Enumeration<
-      [
-        'Roboto (sans serif)',
-        'Open Sans (sans serif)',
-        'Montserrat (sans serif)',
-        'Lato (sans serif)',
-        'Roboto Condensed (sans serif)',
-        'Barlow Condensed (sans serif)',
-        'Saira Condensed (sans serif)',
-        'Merriweather (serif)',
-        'PT Serif (serif)',
-        'EB Garamond (serif)',
-        'Dancing Script (handwriting)',
-        'Pacifico (handwriting)',
-        'Caveat (handwriting)',
-        'Permanent Marker (handwriting)',
-        'Satisfy (handwriting)'
-      ]
-    > &
-      Attribute.Required &
-      Attribute.DefaultTo<'Roboto (sans serif)'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -977,6 +932,82 @@ export interface ApiSiteParameterSiteParameter extends Schema.SingleType {
   };
 }
 
+export interface ApiStyleStyle extends Schema.SingleType {
+  collectionName: 'styles';
+  info: {
+    singularName: 'style';
+    pluralName: 'styles';
+    displayName: 'Styles';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    logo: Attribute.Media;
+    cover: Attribute.Media;
+    backgroundImage: Attribute.Media;
+    defaultBackgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    defaultFontColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    defaultFont: Attribute.Enumeration<
+      [
+        'Roboto (sans serif)',
+        'Open Sans (sans serif)',
+        'Montserrat (sans serif)',
+        'Lato (sans serif)',
+        'Roboto Condensed (sans serif)',
+        'Barlow Condensed (sans serif)',
+        'Saira Condensed (sans serif)',
+        'Merriweather (serif)',
+        'PT Serif (serif)',
+        'EB Garamond (serif)',
+        'Dancing Script (handwriting)',
+        'Pacifico (handwriting)',
+        'Caveat (handwriting)',
+        'Permanent Marker (handwriting)',
+        'Satisfy (handwriting)'
+      ]
+    > &
+      Attribute.Required;
+    headerFont: Attribute.Enumeration<
+      [
+        'Roboto (sans serif)',
+        'Open Sans (sans serif)',
+        'Montserrat (sans serif)',
+        'Lato (sans serif)',
+        'Roboto Condensed (sans serif)',
+        'Barlow Condensed (sans serif)',
+        'Saira Condensed (sans serif)',
+        'Merriweather (serif)',
+        'PT Serif (serif)',
+        'EB Garamond (serif)',
+        'Dancing Script (handwriting)',
+        'Pacifico (handwriting)',
+        'Caveat (handwriting)',
+        'Permanent Marker (handwriting)',
+        'Satisfy (handwriting)'
+      ]
+    > &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::style.style',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::style.style',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Schema.CollectionType {
   collectionName: 'tags';
   info: {
@@ -1026,6 +1057,7 @@ declare module '@strapi/types' {
       'api::profile.profile': ApiProfileProfile;
       'api::project.project': ApiProjectProject;
       'api::site-parameter.site-parameter': ApiSiteParameterSiteParameter;
+      'api::style.style': ApiStyleStyle;
       'api::tag.tag': ApiTagTag;
     }
   }

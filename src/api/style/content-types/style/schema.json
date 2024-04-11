@@ -1,0 +1,92 @@
+{
+  "kind": "singleType",
+  "collectionName": "styles",
+  "info": {
+    "singularName": "style",
+    "pluralName": "styles",
+    "displayName": "Styles",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "defaultBackgroundColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "defaultFontColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "defaultFont": {
+      "type": "enumeration",
+      "enum": [
+        "Roboto (sans serif)",
+        "Open Sans (sans serif)",
+        "Montserrat (sans serif)",
+        "Lato (sans serif)",
+        "Roboto Condensed (sans serif)",
+        "Barlow Condensed (sans serif)",
+        "Saira Condensed (sans serif)",
+        "Merriweather (serif)",
+        "PT Serif (serif)",
+        "EB Garamond (serif)",
+        "Dancing Script (handwriting)",
+        "Pacifico (handwriting)",
+        "Caveat (handwriting)",
+        "Permanent Marker (handwriting)",
+        "Satisfy (handwriting)"
+      ],
+      "required": true
+    },
+    "headerFont": {
+      "type": "enumeration",
+      "enum": [
+        "Roboto (sans serif)",
+        "Open Sans (sans serif)",
+        "Montserrat (sans serif)",
+        "Lato (sans serif)",
+        "Roboto Condensed (sans serif)",
+        "Barlow Condensed (sans serif)",
+        "Saira Condensed (sans serif)",
+        "Merriweather (serif)",
+        "PT Serif (serif)",
+        "EB Garamond (serif)",
+        "Dancing Script (handwriting)",
+        "Pacifico (handwriting)",
+        "Caveat (handwriting)",
+        "Permanent Marker (handwriting)",
+        "Satisfy (handwriting)"
+      ],
+      "required": true
+    }
+  }
+}
