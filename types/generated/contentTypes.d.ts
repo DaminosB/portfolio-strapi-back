@@ -839,7 +839,6 @@ export interface ApiProfileProfile extends Schema.SingleType {
     telephone: Attribute.String;
     logo: Attribute.Media;
     cover: Attribute.Media;
-    homePageBackground: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -993,6 +992,7 @@ export interface ApiStyleStyle extends Schema.SingleType {
       ]
     > &
       Attribute.Required;
+    homePageBackground: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
