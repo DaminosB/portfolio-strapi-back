@@ -837,6 +837,9 @@ export interface ApiProfileProfile extends Schema.SingleType {
     socialURLs: Attribute.Component<'profile.social-medias'>;
     email: Attribute.Email & Attribute.Required;
     telephone: Attribute.String;
+    logo: Attribute.Media;
+    cover: Attribute.Media;
+    homePageBackground: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -944,13 +947,12 @@ export interface ApiStyleStyle extends Schema.SingleType {
     draftAndPublish: false;
   };
   attributes: {
-    logo: Attribute.Media;
-    cover: Attribute.Media;
-    backgroundImage: Attribute.Media;
     defaultBackgroundColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.DefaultTo<'#000000'>;
     defaultFontColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.DefaultTo<'#FFFFFF'>;
     defaultFont: Attribute.Enumeration<
       [
         'Roboto (sans serif)',
