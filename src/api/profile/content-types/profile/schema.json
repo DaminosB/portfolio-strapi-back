@@ -75,6 +75,28 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "headerFont": {
+      "type": "enumeration",
+      "enum": [
+        "Roboto (sans serif)",
+        "Open Sans (sans serif)",
+        "Montserrat (sans serif)",
+        "Lato (sans serif)",
+        "Roboto Condensed (sans serif)",
+        "Barlow Condensed (sans serif)",
+        "Saira Condensed (sans serif)",
+        "Merriweather (serif)",
+        "PT Serif (serif)",
+        "EB Garamond (serif)",
+        "Dancing Script (handwriting)",
+        "Pacifico (handwriting)",
+        "Caveat (handwriting)",
+        "Permanent Marker (handwriting)",
+        "Satisfy (handwriting)"
+      ],
+      "default": "Roboto (sans serif)",
+      "required": true
     }
   }
 }

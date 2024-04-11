@@ -861,6 +861,27 @@ export interface ApiProfileProfile extends Schema.SingleType {
       Attribute.Required &
       Attribute.DefaultTo<'Roboto (sans serif)'>;
     cover: Attribute.Media;
+    headerFont: Attribute.Enumeration<
+      [
+        'Roboto (sans serif)',
+        'Open Sans (sans serif)',
+        'Montserrat (sans serif)',
+        'Lato (sans serif)',
+        'Roboto Condensed (sans serif)',
+        'Barlow Condensed (sans serif)',
+        'Saira Condensed (sans serif)',
+        'Merriweather (serif)',
+        'PT Serif (serif)',
+        'EB Garamond (serif)',
+        'Dancing Script (handwriting)',
+        'Pacifico (handwriting)',
+        'Caveat (handwriting)',
+        'Permanent Marker (handwriting)',
+        'Satisfy (handwriting)'
+      ]
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'Roboto (sans serif)'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
