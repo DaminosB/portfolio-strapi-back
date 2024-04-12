@@ -38,6 +38,12 @@
       "type": "component",
       "repeatable": true,
       "component": "module.logos"
+    },
+    "thumbnailColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": true,
+      "customField": "plugin::color-picker.color"
     }
   }
 }
