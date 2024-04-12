@@ -85,6 +85,18 @@ export interface ModuleImagesTailleNormale extends Schema.Component {
   };
 }
 
+export interface ModuleLogos extends Schema.Component {
+  collectionName: 'components_module_logos';
+  info: {
+    displayName: 'Logos';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    supportMedia: Attribute.Media;
+    logoItem: Attribute.Media & Attribute.Required;
+  };
+}
+
 export interface ModuleTextOnly extends Schema.Component {
   collectionName: 'components_module_text_onlies';
   info: {
@@ -183,6 +195,7 @@ declare module '@strapi/types' {
       'module.fullpage-image': ModuleFullpageImage;
       'module.image-and-text': ModuleImageAndText;
       'module.images-taille-normale': ModuleImagesTailleNormale;
+      'module.logos': ModuleLogos;
       'module.text-only': ModuleTextOnly;
       'module.thumbnails': ModuleThumbnails;
       'profile.autres-liens': ProfileAutresLiens;
