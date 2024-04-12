@@ -4,28 +4,29 @@
   "info": {
     "singularName": "logo",
     "pluralName": "logos",
-    "displayName": "Logos"
+    "displayName": "Logos",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "logo": {
-      "allowedTypes": [
-        "images"
-      ],
+    "thumbnail": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "cover": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "visible": {
       "type": "boolean",

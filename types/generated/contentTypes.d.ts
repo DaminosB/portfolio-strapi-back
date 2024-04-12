@@ -794,12 +794,13 @@ export interface ApiLogoLogo extends Schema.SingleType {
     singularName: 'logo';
     pluralName: 'logos';
     displayName: 'Logos';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    logo: Attribute.Media & Attribute.Required;
+    thumbnail: Attribute.Media & Attribute.Required;
     cover: Attribute.Media & Attribute.Required;
     visible: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
     logoModule: Attribute.Component<'module.logos', true>;
