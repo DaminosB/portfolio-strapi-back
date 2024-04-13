@@ -1021,6 +1021,24 @@ export interface ApiStyleStyle extends Schema.SingleType {
     > &
       Attribute.Required;
     homePageBackground: Attribute.Media & Attribute.Required;
+    thumbnailsPerRow: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      > &
+      Attribute.DefaultTo<3>;
+    gap: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<20>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
