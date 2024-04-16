@@ -85,6 +85,12 @@
       "required": true,
       "default": 20,
       "min": 0
+    },
+    "headerHeight": {
+      "type": "integer",
+      "min": 25,
+      "required": true,
+      "default": 90
     }
   }
 }

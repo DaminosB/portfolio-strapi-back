@@ -1039,6 +1039,15 @@ export interface ApiStyleStyle extends Schema.SingleType {
         number
       > &
       Attribute.DefaultTo<20>;
+    headerHeight: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 25;
+        },
+        number
+      > &
+      Attribute.DefaultTo<90>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
