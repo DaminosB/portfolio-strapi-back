@@ -1043,7 +1043,7 @@ export interface ApiStyleStyle extends Schema.SingleType {
       Attribute.Required &
       Attribute.SetMinMax<
         {
-          min: 25;
+          min: 30;
         },
         number
       > &

@@ -88,7 +88,7 @@
     },
     "headerHeight": {
       "type": "integer",
-      "min": 25,
+      "min": 30,
       "required": true,
       "default": 90
     }
