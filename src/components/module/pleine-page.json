@@ -1,17 +1,19 @@
 {
   "collectionName": "components_module_pleine_pages",
   "info": {
-    "displayName": "Pleine page"
+    "displayName": "Pleine page",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "medias": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "gap": {
       "type": "integer",
@@ -20,16 +22,22 @@
       "required": true
     },
     "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "backgroundColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "customField": "plugin::color-picker.color"
+    },
+    "keepHeight": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

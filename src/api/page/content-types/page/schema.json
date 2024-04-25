@@ -20,11 +20,8 @@
     "modules": {
       "type": "dynamiczone",
       "components": [
-        "module.fullpage-image",
         "module.image-and-text",
-        "module.text-only",
-        "module.thumbnails",
-        "module.images-taille-normale"
+        "module.text-only"
       ],
       "required": true
     }

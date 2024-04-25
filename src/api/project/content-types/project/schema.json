@@ -35,11 +35,8 @@
     "modules": {
       "type": "dynamiczone",
       "components": [
-        "module.fullpage-image",
         "module.text-only",
-        "module.thumbnails",
         "module.image-and-text",
-        "module.images-taille-normale",
         "module.container",
         "module.pleine-page"
       ]

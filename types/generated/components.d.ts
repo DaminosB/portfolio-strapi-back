@@ -31,31 +31,6 @@ export interface ModuleContainer extends Schema.Component {
   };
 }
 
-export interface ModuleFullpageImage extends Schema.Component {
-  collectionName: 'components_module_fullpage_images';
-  info: {
-    displayName: 'Images pleine page';
-    description: '';
-    icon: 'picture';
-  };
-  attributes: {
-    medias: Attribute.Media;
-    backgroundColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'> &
-      Attribute.DefaultTo<'#FFFFFF'>;
-    numberOfImages: Attribute.Integer &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 0;
-          max: 5;
-        },
-        number
-      > &
-      Attribute.DefaultTo<1>;
-  };
-}
-
 export interface ModuleImageAndText extends Schema.Component {
   collectionName: 'components_module_image_and_texts';
   info: {
@@ -103,19 +78,6 @@ export interface ModuleImageAndText extends Schema.Component {
   };
 }
 
-export interface ModuleImagesTailleNormale extends Schema.Component {
-  collectionName: 'components_module_images_taille_normales';
-  info: {
-    displayName: 'Images taille r\u00E9elle';
-    description: '';
-  };
-  attributes: {
-    medias: Attribute.Media;
-    backgroundColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-  };
-}
-
 export interface ModuleLogos extends Schema.Component {
   collectionName: 'components_module_logos';
   info: {
@@ -132,6 +94,7 @@ export interface ModulePleinePage extends Schema.Component {
   collectionName: 'components_module_pleine_pages';
   info: {
     displayName: 'Pleine page';
+    description: '';
   };
   attributes: {
     medias: Attribute.Media;
@@ -147,6 +110,9 @@ export interface ModulePleinePage extends Schema.Component {
     backgroundImage: Attribute.Media;
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
+    keepHeight: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
   };
 }
 
@@ -195,24 +161,6 @@ export interface ModuleTextOnly extends Schema.Component {
   };
 }
 
-export interface ModuleThumbnails extends Schema.Component {
-  collectionName: 'components_module_thumbnails';
-  info: {
-    displayName: 'Vignettes';
-    icon: 'apps';
-    description: '';
-  };
-  attributes: {
-    medias: Attribute.Media;
-    backgroundColor: Attribute.String &
-      Attribute.Required &
-      Attribute.CustomField<'plugin::color-picker.color'> &
-      Attribute.DefaultTo<'#FFFFFF'>;
-    imagesPerRow: Attribute.Integer;
-    backgroundImage: Attribute.Media;
-  };
-}
-
 export interface ProfileAutresLiens extends Schema.Component {
   collectionName: 'components_profile_autres_liens';
   info: {
@@ -246,13 +194,10 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'module.container': ModuleContainer;
-      'module.fullpage-image': ModuleFullpageImage;
       'module.image-and-text': ModuleImageAndText;
-      'module.images-taille-normale': ModuleImagesTailleNormale;
       'module.logos': ModuleLogos;
       'module.pleine-page': ModulePleinePage;
       'module.text-only': ModuleTextOnly;
-      'module.thumbnails': ModuleThumbnails;
       'profile.autres-liens': ProfileAutresLiens;
       'profile.social-medias': ProfileSocialMedias;
     }

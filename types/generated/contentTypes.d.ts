@@ -830,13 +830,7 @@ export interface ApiPagePage extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
     modules: Attribute.DynamicZone<
-      [
-        'module.fullpage-image',
-        'module.image-and-text',
-        'module.text-only',
-        'module.thumbnails',
-        'module.images-taille-normale'
-      ]
+      ['module.image-and-text', 'module.text-only']
     > &
       Attribute.Required;
     createdAt: Attribute.DateTime;
@@ -906,11 +900,8 @@ export interface ApiProjectProject extends Schema.CollectionType {
     thumbnail: Attribute.Media & Attribute.Required;
     modules: Attribute.DynamicZone<
       [
-        'module.fullpage-image',
         'module.text-only',
-        'module.thumbnails',
         'module.image-and-text',
-        'module.images-taille-normale',
         'module.container',
         'module.pleine-page'
       ]
