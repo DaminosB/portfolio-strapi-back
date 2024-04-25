@@ -39,16 +39,18 @@
         "module.text-only",
         "module.thumbnails",
         "module.image-and-text",
-        "module.images-taille-normale"
+        "module.images-taille-normale",
+        "module.container",
+        "module.pleine-page"
       ]
     },
     "cover": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

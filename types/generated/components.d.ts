@@ -1,5 +1,36 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ModuleContainer extends Schema.Component {
+  collectionName: 'components_module_containers';
+  info: {
+    displayName: 'Container';
+  };
+  attributes: {
+    medias: Attribute.Media;
+    gap: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<0>;
+    imagesPerRow: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<1>;
+    backgroundImage: Attribute.Media;
+    backgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface ModuleFullpageImage extends Schema.Component {
   collectionName: 'components_module_fullpage_images';
   info: {
@@ -94,6 +125,28 @@ export interface ModuleLogos extends Schema.Component {
     title: Attribute.String & Attribute.Required;
     supportMedia: Attribute.Media;
     logoItem: Attribute.Media & Attribute.Required;
+  };
+}
+
+export interface ModulePleinePage extends Schema.Component {
+  collectionName: 'components_module_pleine_pages';
+  info: {
+    displayName: 'Pleine page';
+  };
+  attributes: {
+    medias: Attribute.Media;
+    gap: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<0>;
+    backgroundImage: Attribute.Media;
+    backgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -192,10 +245,12 @@ export interface ProfileSocialMedias extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'module.container': ModuleContainer;
       'module.fullpage-image': ModuleFullpageImage;
       'module.image-and-text': ModuleImageAndText;
       'module.images-taille-normale': ModuleImagesTailleNormale;
       'module.logos': ModuleLogos;
+      'module.pleine-page': ModulePleinePage;
       'module.text-only': ModuleTextOnly;
       'module.thumbnails': ModuleThumbnails;
       'profile.autres-liens': ProfileAutresLiens;

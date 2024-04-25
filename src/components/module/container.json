@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_module_containers",
+  "info": {
+    "displayName": "Container"
+  },
+  "options": {},
+  "attributes": {
+    "medias": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "gap": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "imagesPerRow": {
+      "type": "integer",
+      "required": true,
+      "default": 1,
+      "min": 0
+    },
+    "backgroundImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "backgroundColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}

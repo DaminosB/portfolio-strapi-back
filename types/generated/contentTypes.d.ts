@@ -910,7 +910,9 @@ export interface ApiProjectProject extends Schema.CollectionType {
         'module.text-only',
         'module.thumbnails',
         'module.image-and-text',
-        'module.images-taille-normale'
+        'module.images-taille-normale',
+        'module.container',
+        'module.pleine-page'
       ]
     >;
     cover: Attribute.Media & Attribute.Required;
