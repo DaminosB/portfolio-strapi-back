@@ -903,7 +903,8 @@ export interface ApiProjectProject extends Schema.CollectionType {
         'module.text-only',
         'module.image-and-text',
         'module.container',
-        'module.pleine-page'
+        'module.pleine-page',
+        'module.colonne-multi-images'
       ]
     >;
     cover: Attribute.Media & Attribute.Required;
