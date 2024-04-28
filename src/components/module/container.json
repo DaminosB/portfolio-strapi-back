@@ -1,17 +1,16 @@
 {
   "collectionName": "components_module_containers",
   "info": {
-    "displayName": "Container"
+    "displayName": "Container",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "medias": {
-      "allowedTypes": [
-        "images",
-        "videos"
-      ],
       "type": "media",
-      "multiple": true
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
     },
     "gap": {
       "type": "integer",
@@ -26,16 +25,27 @@
       "min": 0
     },
     "backgroundImage": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
     },
     "backgroundColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "customField": "plugin::color-picker.color"
+    },
+    "text": {
+      "type": "component",
+      "repeatable": false,
+      "component": "module.text-only"
+    },
+    "imageSliderColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color",
+      "required": true,
+      "default": "#FFFFFF"
     }
   }
 }

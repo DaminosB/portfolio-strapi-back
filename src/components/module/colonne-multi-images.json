@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_module_colonne_multi_images",
+  "info": {
+    "displayName": "Colonne multi images",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "medias": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": true
+    },
+    "backgroundColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "imageSliderColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color",
+      "required": true,
+      "default": "#FFFFFF"
+    }
+  }
+}

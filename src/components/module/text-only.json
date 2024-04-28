@@ -21,18 +21,18 @@
     "alignment": {
       "type": "enumeration",
       "enum": [
-        "Left",
-        "Center",
-        "Right",
-        "Justify"
+        "Gauche",
+        "Droite",
+        "Centré",
+        "Justifié"
       ],
       "required": true,
-      "default": "Justify"
+      "default": "Gauche"
     },
     "backgroundColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "required": true,
+      "required": false,
       "customField": "plugin::color-picker.color",
       "default": "#FFFFFF"
     },
@@ -65,6 +65,17 @@
       ],
       "default": "Roboto (sans serif)",
       "required": true
+    },
+    "textPosition": {
+      "type": "enumeration",
+      "enum": [
+        "Haut",
+        "Bas",
+        "Gauche",
+        "Droite"
+      ],
+      "required": true,
+      "default": "Haut"
     }
   }
 }

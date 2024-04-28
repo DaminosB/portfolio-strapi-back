@@ -1,9 +1,27 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ModuleColonneMultiImages extends Schema.Component {
+  collectionName: 'components_module_colonne_multi_images';
+  info: {
+    displayName: 'Colonne multi images';
+    icon: 'landscape';
+  };
+  attributes: {
+    medias: Attribute.Media;
+    backgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    imageSliderColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.DefaultTo<'#FFFFFF'>;
+  };
+}
+
 export interface ModuleContainer extends Schema.Component {
   collectionName: 'components_module_containers';
   info: {
     displayName: 'Container';
+    description: '';
   };
   attributes: {
     medias: Attribute.Media;
@@ -28,6 +46,11 @@ export interface ModuleContainer extends Schema.Component {
     backgroundImage: Attribute.Media;
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
+    text: Attribute.Component<'module.text-only'>;
+    imageSliderColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.DefaultTo<'#FFFFFF'>;
   };
 }
 
@@ -110,9 +133,11 @@ export interface ModulePleinePage extends Schema.Component {
     backgroundImage: Attribute.Media;
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
-    keepHeight: Attribute.Boolean &
+    text: Attribute.Component<'module.text-only'>;
+    imageSliderColor: Attribute.String &
       Attribute.Required &
-      Attribute.DefaultTo<false>;
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.DefaultTo<'#FFFFFF'>;
   };
 }
 
@@ -129,11 +154,12 @@ export interface ModuleTextOnly extends Schema.Component {
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#000000'>;
     text: Attribute.Text & Attribute.Required;
-    alignment: Attribute.Enumeration<['Left', 'Center', 'Right', 'Justify']> &
+    alignment: Attribute.Enumeration<
+      ['Gauche', 'Droite', 'Centr\u00E9', 'Justifi\u00E9']
+    > &
       Attribute.Required &
-      Attribute.DefaultTo<'Justify'>;
+      Attribute.DefaultTo<'Gauche'>;
     backgroundColor: Attribute.String &
-      Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#FFFFFF'>;
     backgroundImage: Attribute.Media;
@@ -158,6 +184,9 @@ export interface ModuleTextOnly extends Schema.Component {
     > &
       Attribute.Required &
       Attribute.DefaultTo<'Roboto (sans serif)'>;
+    textPosition: Attribute.Enumeration<['Haut', 'Bas', 'Gauche', 'Droite']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'Haut'>;
   };
 }
 
@@ -193,6 +222,7 @@ export interface ProfileSocialMedias extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'module.colonne-multi-images': ModuleColonneMultiImages;
       'module.container': ModuleContainer;
       'module.image-and-text': ModuleImageAndText;
       'module.logos': ModuleLogos;
