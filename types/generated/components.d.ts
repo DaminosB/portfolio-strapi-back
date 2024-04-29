@@ -183,9 +183,9 @@ export interface ModuleTextOnly extends Schema.Component {
     > &
       Attribute.Required &
       Attribute.DefaultTo<'Roboto (sans serif)'>;
-    textPosition: Attribute.Enumeration<['Haut', 'Bas', 'Gauche', 'Droite']> &
+    textPosition: Attribute.Enumeration<['Gauche', 'Droite']> &
       Attribute.Required &
-      Attribute.DefaultTo<'Haut'>;
+      Attribute.DefaultTo<'Droite'>;
     fontSize: Attribute.Enumeration<
       ['xLarge', 'Large', 'Medium', 'Small', 'xSmall']
     > &

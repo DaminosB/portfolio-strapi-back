@@ -61,13 +61,11 @@
     "textPosition": {
       "type": "enumeration",
       "enum": [
-        "Haut",
-        "Bas",
         "Gauche",
         "Droite"
       ],
       "required": true,
-      "default": "Haut"
+      "default": "Droite"
     },
     "fontSize": {
       "type": "enumeration",
