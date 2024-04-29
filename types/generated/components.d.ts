@@ -162,7 +162,6 @@ export interface ModuleTextOnly extends Schema.Component {
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#FFFFFF'>;
-    backgroundImage: Attribute.Media;
     font: Attribute.Enumeration<
       [
         'Roboto (sans serif)',
@@ -187,6 +186,20 @@ export interface ModuleTextOnly extends Schema.Component {
     textPosition: Attribute.Enumeration<['Haut', 'Bas', 'Gauche', 'Droite']> &
       Attribute.Required &
       Attribute.DefaultTo<'Haut'>;
+    fontSize: Attribute.Enumeration<
+      ['xLarge', 'Large', 'Medium', 'Small', 'xSmall']
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'Large'>;
+    gap: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<20>;
   };
 }
 
