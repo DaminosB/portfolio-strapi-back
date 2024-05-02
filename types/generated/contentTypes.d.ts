@@ -807,6 +807,8 @@ export interface ApiLogoLogo extends Schema.SingleType {
     isVisible: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<true>;
+    thumbnailColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::logo.logo', 'oneToOne', 'admin::user'> &
