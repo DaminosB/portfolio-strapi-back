@@ -800,13 +800,9 @@ export interface ApiLogoLogo extends Schema.SingleType {
     draftAndPublish: false;
   };
   attributes: {
-    thumbnail: Attribute.Media & Attribute.Required;
-    cover: Attribute.Media & Attribute.Required;
-    visible: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
-    logoModule: Attribute.Component<'module.logos', true>;
-    thumbnailColor: Attribute.String &
-      Attribute.Required &
-      Attribute.CustomField<'plugin::color-picker.color'>;
+    moduleSelection: Attribute.DynamicZone<
+      ['module.container', 'module.pleine-page', 'module.colonne-multi-images']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::logo.logo', 'oneToOne', 'admin::user'> &
@@ -829,10 +825,7 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
-    modules: Attribute.DynamicZone<
-      ['module.image-and-text', 'module.text-only']
-    > &
-      Attribute.Required;
+    modules: Attribute.DynamicZone<['module.text-only']> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -901,7 +894,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
     modules: Attribute.DynamicZone<
       [
         'module.text-only',
-        'module.image-and-text',
         'module.container',
         'module.pleine-page',
         'module.colonne-multi-images'
@@ -956,7 +948,7 @@ export interface ApiSiteParameterSiteParameter extends Schema.SingleType {
   };
 }
 
-export interface ApiStyleStyle extends Schema.SingleType {
+export interface ApiStyleStyle extends Schema.CollectionType {
   collectionName: 'styles';
   info: {
     singularName: 'style';

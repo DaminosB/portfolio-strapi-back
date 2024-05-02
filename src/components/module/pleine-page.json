@@ -2,7 +2,8 @@
   "collectionName": "components_module_pleine_pages",
   "info": {
     "displayName": "Pleine page",
-    "description": ""
+    "description": "",
+    "icon": "picture"
   },
   "options": {},
   "attributes": {
@@ -10,7 +11,10 @@
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": ["images", "videos"]
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     },
     "gap": {
       "type": "integer",
@@ -22,7 +26,9 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "backgroundColor": {
       "type": "customField",

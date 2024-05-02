@@ -20,12 +20,7 @@
     },
     "alignment": {
       "type": "enumeration",
-      "enum": [
-        "Gauche",
-        "Droite",
-        "Centré",
-        "Justifié"
-      ],
+      "enum": ["Gauche", "Droite", "Centré", "Justifié"],
       "required": true,
       "default": "Gauche"
     },
@@ -33,8 +28,7 @@
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "required": false,
-      "customField": "plugin::color-picker.color",
-      "default": "#FFFFFF"
+      "customField": "plugin::color-picker.color"
     },
     "font": {
       "type": "enumeration",
@@ -60,22 +54,13 @@
     },
     "textPosition": {
       "type": "enumeration",
-      "enum": [
-        "Gauche",
-        "Droite"
-      ],
+      "enum": ["Gauche", "Droite"],
       "required": true,
       "default": "Droite"
     },
     "fontSize": {
       "type": "enumeration",
-      "enum": [
-        "xLarge",
-        "Large",
-        "Medium",
-        "Small",
-        "xSmall"
-      ],
+      "enum": ["xLarge", "Large", "Medium", "Small", "xSmall"],
       "default": "Large",
       "required": true
     },

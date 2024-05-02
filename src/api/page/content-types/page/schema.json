@@ -20,7 +20,6 @@
     "modules": {
       "type": "dynamiczone",
       "components": [
-        "module.image-and-text",
         "module.text-only"
       ],
       "required": true

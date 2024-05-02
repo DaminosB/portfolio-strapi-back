@@ -12,38 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "thumbnail": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
+    "moduleSelection": {
+      "type": "dynamiczone",
+      "components": [
+        "module.container",
+        "module.pleine-page",
+        "module.colonne-multi-images"
       ]
-    },
-    "cover": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "visible": {
-      "type": "boolean",
-      "default": true,
-      "required": true
-    },
-    "logoModule": {
-      "displayName": "Logos",
-      "type": "component",
-      "repeatable": true,
-      "component": "module.logos"
-    },
-    "thumbnailColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "required": true,
-      "customField": "plugin::color-picker.color"
     }
   }
 }

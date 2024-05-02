@@ -36,7 +36,6 @@
       "type": "dynamiczone",
       "components": [
         "module.text-only",
-        "module.image-and-text",
         "module.container",
         "module.pleine-page",
         "module.colonne-multi-images"

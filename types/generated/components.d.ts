@@ -22,6 +22,7 @@ export interface ModuleContainer extends Schema.Component {
   info: {
     displayName: 'Container';
     description: '';
+    icon: 'dashboard';
   };
   attributes: {
     medias: Attribute.Media;
@@ -54,53 +55,6 @@ export interface ModuleContainer extends Schema.Component {
   };
 }
 
-export interface ModuleImageAndText extends Schema.Component {
-  collectionName: 'components_module_image_and_texts';
-  info: {
-    displayName: 'Image et texte';
-    icon: 'layout';
-    description: '';
-  };
-  attributes: {
-    text: Attribute.Text & Attribute.Required;
-    medias: Attribute.Media & Attribute.Required;
-    backgroundColor: Attribute.String &
-      Attribute.Required &
-      Attribute.CustomField<'plugin::color-picker.color'> &
-      Attribute.DefaultTo<'#FFFFFF'>;
-    backgroundImage: Attribute.Media;
-    textAndImagesPositions: Attribute.Enumeration<
-      ['Image - Texte', 'Texte - Image']
-    > &
-      Attribute.Required &
-      Attribute.DefaultTo<'Image - Texte'>;
-    textColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'> &
-      Attribute.DefaultTo<'#000000'>;
-    font: Attribute.Enumeration<
-      [
-        'Roboto (sans serif)',
-        'Open Sans (sans serif)',
-        'Montserrat (sans serif)',
-        'Lato (sans serif)',
-        'Roboto Condensed (sans serif)',
-        'Barlow Condensed (sans serif)',
-        'Saira Condensed (sans serif)',
-        'Merriweather (serif)',
-        'PT Serif (serif)',
-        'EB Garamond (serif)',
-        'Dancing Script (handwriting)',
-        'Pacifico (handwriting)',
-        'Caveat (handwriting)',
-        'Permanent Marker (handwriting)',
-        'Satisfy (handwriting)'
-      ]
-    > &
-      Attribute.Required &
-      Attribute.DefaultTo<'Roboto (sans serif)'>;
-  };
-}
-
 export interface ModuleLogos extends Schema.Component {
   collectionName: 'components_module_logos';
   info: {
@@ -118,6 +72,7 @@ export interface ModulePleinePage extends Schema.Component {
   info: {
     displayName: 'Pleine page';
     description: '';
+    icon: 'picture';
   };
   attributes: {
     medias: Attribute.Media;
@@ -160,8 +115,7 @@ export interface ModuleTextOnly extends Schema.Component {
       Attribute.Required &
       Attribute.DefaultTo<'Gauche'>;
     backgroundColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'> &
-      Attribute.DefaultTo<'#FFFFFF'>;
+      Attribute.CustomField<'plugin::color-picker.color'>;
     font: Attribute.Enumeration<
       [
         'Roboto (sans serif)',
@@ -237,7 +191,6 @@ declare module '@strapi/types' {
     export interface Components {
       'module.colonne-multi-images': ModuleColonneMultiImages;
       'module.container': ModuleContainer;
-      'module.image-and-text': ModuleImageAndText;
       'module.logos': ModuleLogos;
       'module.pleine-page': ModulePleinePage;
       'module.text-only': ModuleTextOnly;
