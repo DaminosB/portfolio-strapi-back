@@ -803,6 +803,10 @@ export interface ApiLogoLogo extends Schema.SingleType {
     moduleSelection: Attribute.DynamicZone<
       ['module.container', 'module.pleine-page', 'module.colonne-multi-images']
     >;
+    thumbnail: Attribute.Media & Attribute.Required;
+    isVisible: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::logo.logo', 'oneToOne', 'admin::user'> &

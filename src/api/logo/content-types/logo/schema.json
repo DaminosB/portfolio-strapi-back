@@ -19,6 +19,19 @@
         "module.pleine-page",
         "module.colonne-multi-images"
       ]
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "isVisible": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }
