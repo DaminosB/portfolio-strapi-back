@@ -952,7 +952,7 @@ export interface ApiSiteParameterSiteParameter extends Schema.SingleType {
   };
 }
 
-export interface ApiStyleStyle extends Schema.CollectionType {
+export interface ApiStyleStyle extends Schema.SingleType {
   collectionName: 'styles';
   info: {
     singularName: 'style';
