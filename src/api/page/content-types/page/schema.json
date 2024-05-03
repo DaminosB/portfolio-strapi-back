@@ -20,9 +20,10 @@
     "modules": {
       "type": "dynamiczone",
       "components": [
-        "module.text-only"
-      ],
-      "required": true
+        "module.colonne-multi-images",
+        "module.container",
+        "module.pleine-page"
+      ]
     }
   }
 }

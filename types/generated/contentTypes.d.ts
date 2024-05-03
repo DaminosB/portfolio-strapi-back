@@ -831,7 +831,9 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
-    modules: Attribute.DynamicZone<['module.text-only']> & Attribute.Required;
+    modules: Attribute.DynamicZone<
+      ['module.colonne-multi-images', 'module.container', 'module.pleine-page']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
