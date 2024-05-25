@@ -5,15 +5,12 @@ export interface ModuleColonneMultiImages extends Schema.Component {
   info: {
     displayName: 'Colonne multi images';
     icon: 'landscape';
+    description: '';
   };
   attributes: {
     medias: Attribute.Media;
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
-    imageSliderColor: Attribute.String &
-      Attribute.Required &
-      Attribute.CustomField<'plugin::color-picker.color'> &
-      Attribute.DefaultTo<'#FFFFFF'>;
   };
 }
 
@@ -48,10 +45,6 @@ export interface ModuleContainer extends Schema.Component {
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
     text: Attribute.Component<'module.text-only'>;
-    imageSliderColor: Attribute.String &
-      Attribute.Required &
-      Attribute.CustomField<'plugin::color-picker.color'> &
-      Attribute.DefaultTo<'#FFFFFF'>;
   };
 }
 
@@ -89,10 +82,6 @@ export interface ModulePleinePage extends Schema.Component {
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
     text: Attribute.Component<'module.text-only'>;
-    imageSliderColor: Attribute.String &
-      Attribute.Required &
-      Attribute.CustomField<'plugin::color-picker.color'> &
-      Attribute.DefaultTo<'#FFFFFF'>;
   };
 }
 
@@ -114,8 +103,6 @@ export interface ModuleTextOnly extends Schema.Component {
     > &
       Attribute.Required &
       Attribute.DefaultTo<'Gauche'>;
-    backgroundColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
     font: Attribute.Enumeration<
       [
         'Roboto (sans serif)',
