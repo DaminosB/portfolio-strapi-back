@@ -837,6 +837,7 @@ export interface ApiPagePage extends Schema.CollectionType {
     themeColor: Attribute.String &
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
+    cover: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -910,7 +911,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
         'module.colonne-multi-images'
       ]
     >;
-    cover: Attribute.Media & Attribute.Required;
+    cover: Attribute.Media;
     themeColor: Attribute.String &
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'>;
