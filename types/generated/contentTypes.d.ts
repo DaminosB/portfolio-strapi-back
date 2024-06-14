@@ -836,8 +836,13 @@ export interface ApiPagePage extends Schema.CollectionType {
     >;
     themeColor: Attribute.String &
       Attribute.Required &
-      Attribute.CustomField<'plugin::color-picker.color'>;
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.DefaultTo<'#000000'>;
     cover: Attribute.Media;
+    fontColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.DefaultTo<'#FFFFFF'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -914,7 +919,12 @@ export interface ApiProjectProject extends Schema.CollectionType {
     cover: Attribute.Media;
     themeColor: Attribute.String &
       Attribute.Required &
-      Attribute.CustomField<'plugin::color-picker.color'>;
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.DefaultTo<'#000000'>;
+    fontColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.DefaultTo<'#FFFFFF'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
