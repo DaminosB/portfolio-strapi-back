@@ -834,6 +834,9 @@ export interface ApiPagePage extends Schema.CollectionType {
     modules: Attribute.DynamicZone<
       ['module.colonne-multi-images', 'module.container', 'module.pleine-page']
     >;
+    themeColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -908,6 +911,9 @@ export interface ApiProjectProject extends Schema.CollectionType {
       ]
     >;
     cover: Attribute.Media & Attribute.Required;
+    themeColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
