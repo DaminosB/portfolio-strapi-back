@@ -897,7 +897,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     title: Attribute.String;
@@ -927,7 +927,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
       Attribute.DefaultTo<'#FFFFFF'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::project.project',
       'oneToOne',
