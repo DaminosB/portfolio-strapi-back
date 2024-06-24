@@ -800,7 +800,7 @@ export interface ApiLogoLogo extends Schema.SingleType {
     draftAndPublish: false;
   };
   attributes: {
-    moduleSelection: Attribute.DynamicZone<
+    modules: Attribute.DynamicZone<
       ['module.container', 'module.pleine-page', 'module.colonne-multi-images']
     >;
     thumbnail: Attribute.Media & Attribute.Required;
@@ -834,12 +834,12 @@ export interface ApiPagePage extends Schema.CollectionType {
     modules: Attribute.DynamicZone<
       ['module.colonne-multi-images', 'module.container', 'module.pleine-page']
     >;
-    themeColor: Attribute.String &
+    mainColor: Attribute.String &
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#000000'>;
     cover: Attribute.Media;
-    fontColor: Attribute.String &
+    secondaryColor: Attribute.String &
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#FFFFFF'>;
@@ -917,11 +917,11 @@ export interface ApiProjectProject extends Schema.CollectionType {
       ]
     >;
     cover: Attribute.Media;
-    themeColor: Attribute.String &
+    mainColor: Attribute.String &
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#000000'>;
-    fontColor: Attribute.String &
+    secondaryColor: Attribute.String &
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#FFFFFF'>;
@@ -985,10 +985,10 @@ export interface ApiStyleStyle extends Schema.SingleType {
     draftAndPublish: false;
   };
   attributes: {
-    defaultBackgroundColor: Attribute.String &
+    mainColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#000000'>;
-    defaultFontColor: Attribute.String &
+    secondaryColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#FFFFFF'>;
     defaultFont: Attribute.Enumeration<

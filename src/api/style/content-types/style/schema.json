@@ -12,13 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "defaultBackgroundColor": {
+    "mainColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "customField": "plugin::color-picker.color",
       "default": "#000000"
     },
-    "defaultFontColor": {
+    "secondaryColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "customField": "plugin::color-picker.color",

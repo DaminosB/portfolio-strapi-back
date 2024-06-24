@@ -49,14 +49,14 @@
         "images"
       ]
     },
-    "themeColor": {
+    "mainColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "required": true,
       "customField": "plugin::color-picker.color",
       "default": "#000000"
     },
-    "fontColor": {
+    "secondaryColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "required": true,
