@@ -5,11 +5,7 @@ module.exports = ({ env }) => ({
         {
           uid: "api::project.project",
           draft: {
-            url: "https://charline-portfolio-front-production.up.railway.app",
-            query: {
-              type: "projects",
-              id: "{id}",
-            },
+            url: "https://charline-portfolio-front-production.up.railway.app/projects/{id}",
           },
           published: {
             url: "https://charline-portfolio-front-production.up.railway.app/projects/{id}",
