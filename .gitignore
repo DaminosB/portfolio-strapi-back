@@ -106,6 +106,7 @@ coverage
 ############################
 
 .env
+.env.backup
 license.txt
 exports
 .strapi
