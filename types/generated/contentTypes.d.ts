@@ -801,7 +801,12 @@ export interface ApiLogoLogo extends Schema.SingleType {
   };
   attributes: {
     modules: Attribute.DynamicZone<
-      ['module.container', 'module.pleine-page', 'module.colonne-multi-images']
+      [
+        'module.container',
+        'module.pleine-page',
+        'module.colonne-multi-images',
+        'constructors.text-only'
+      ]
     >;
     thumbnail: Attribute.Media & Attribute.Required;
     isVisible: Attribute.Boolean &
@@ -832,7 +837,12 @@ export interface ApiPagePage extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
     modules: Attribute.DynamicZone<
-      ['module.colonne-multi-images', 'module.container', 'module.pleine-page']
+      [
+        'module.colonne-multi-images',
+        'module.container',
+        'module.pleine-page',
+        'module.texte'
+      ]
     >;
     mainColor: Attribute.String &
       Attribute.Required &
@@ -910,10 +920,10 @@ export interface ApiProjectProject extends Schema.CollectionType {
     thumbnail: Attribute.Media & Attribute.Required;
     modules: Attribute.DynamicZone<
       [
-        'module.text-only',
         'module.container',
         'module.pleine-page',
-        'module.colonne-multi-images'
+        'module.colonne-multi-images',
+        'module.texte'
       ]
     >;
     cover: Attribute.Media;
@@ -992,26 +1002,6 @@ export interface ApiStyleStyle extends Schema.SingleType {
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#FFFFFF'>;
     defaultFont: Attribute.Enumeration<
-      [
-        'Roboto (sans serif)',
-        'Open Sans (sans serif)',
-        'Montserrat (sans serif)',
-        'Lato (sans serif)',
-        'Roboto Condensed (sans serif)',
-        'Barlow Condensed (sans serif)',
-        'Saira Condensed (sans serif)',
-        'Merriweather (serif)',
-        'PT Serif (serif)',
-        'EB Garamond (serif)',
-        'Dancing Script (handwriting)',
-        'Pacifico (handwriting)',
-        'Caveat (handwriting)',
-        'Permanent Marker (handwriting)',
-        'Satisfy (handwriting)'
-      ]
-    > &
-      Attribute.Required;
-    headerFont: Attribute.Enumeration<
       [
         'Roboto (sans serif)',
         'Open Sans (sans serif)',

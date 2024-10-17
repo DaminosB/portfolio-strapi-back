@@ -11,7 +11,10 @@
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": ["images", "videos"]
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     },
     "gap": {
       "type": "integer",
@@ -23,7 +26,9 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "backgroundColor": {
       "type": "customField",
@@ -33,7 +38,7 @@
     "text": {
       "type": "component",
       "repeatable": false,
-      "component": "module.text-only"
+      "component": "constructors.text-only"
     }
   }
 }

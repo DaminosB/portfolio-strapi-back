@@ -1,8 +1,8 @@
 {
   "collectionName": "components_module_text_onlies",
   "info": {
-    "displayName": "Texte seul",
-    "icon": "feather",
+    "displayName": "Texte",
+    "icon": "file",
     "description": ""
   },
   "options": {},
@@ -13,10 +13,6 @@
       "required": true,
       "customField": "plugin::color-picker.color",
       "default": "#000000"
-    },
-    "text": {
-      "type": "text",
-      "required": true
     },
     "alignment": {
       "type": "enumeration",
@@ -60,23 +56,8 @@
       "required": true,
       "default": "Droite"
     },
-    "fontSize": {
-      "type": "enumeration",
-      "enum": [
-        "xLarge",
-        "Large",
-        "Medium",
-        "Small",
-        "xSmall"
-      ],
-      "default": "Large",
-      "required": true
-    },
-    "gap": {
-      "type": "integer",
-      "default": 20,
-      "required": true,
-      "min": 0
+    "richText": {
+      "type": "blocks"
     }
   }
 }

@@ -44,7 +44,7 @@
     "text": {
       "type": "component",
       "repeatable": false,
-      "component": "module.text-only"
+      "component": "constructors.text-only"
     }
   }
 }

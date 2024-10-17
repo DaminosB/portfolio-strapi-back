@@ -22,7 +22,8 @@
       "components": [
         "module.colonne-multi-images",
         "module.container",
-        "module.pleine-page"
+        "module.pleine-page",
+        "module.texte"
       ]
     },
     "mainColor": {

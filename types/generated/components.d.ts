@@ -1,5 +1,50 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ConstructorsTextOnly extends Schema.Component {
+  collectionName: 'components_module_text_onlies';
+  info: {
+    displayName: 'Texte';
+    icon: 'file';
+    description: '';
+  };
+  attributes: {
+    textColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.DefaultTo<'#000000'>;
+    alignment: Attribute.Enumeration<
+      ['Gauche', 'Droite', 'Centr\u00E9', 'Justifi\u00E9']
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'Gauche'>;
+    font: Attribute.Enumeration<
+      [
+        'Roboto (sans serif)',
+        'Open Sans (sans serif)',
+        'Montserrat (sans serif)',
+        'Lato (sans serif)',
+        'Roboto Condensed (sans serif)',
+        'Barlow Condensed (sans serif)',
+        'Saira Condensed (sans serif)',
+        'Merriweather (serif)',
+        'PT Serif (serif)',
+        'EB Garamond (serif)',
+        'Dancing Script (handwriting)',
+        'Pacifico (handwriting)',
+        'Caveat (handwriting)',
+        'Permanent Marker (handwriting)',
+        'Satisfy (handwriting)'
+      ]
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'Roboto (sans serif)'>;
+    textPosition: Attribute.Enumeration<['Gauche', 'Droite']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'Droite'>;
+    richText: Attribute.Blocks;
+  };
+}
+
 export interface ModuleColonneMultiImages extends Schema.Component {
   collectionName: 'components_module_colonne_multi_images';
   info: {
@@ -44,19 +89,7 @@ export interface ModuleContainer extends Schema.Component {
     backgroundImage: Attribute.Media;
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
-    text: Attribute.Component<'module.text-only'>;
-  };
-}
-
-export interface ModuleLogos extends Schema.Component {
-  collectionName: 'components_module_logos';
-  info: {
-    displayName: 'Logos';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    supportMedia: Attribute.Media;
-    logoItem: Attribute.Media & Attribute.Required;
+    text: Attribute.Component<'constructors.text-only'>;
   };
 }
 
@@ -81,79 +114,22 @@ export interface ModulePleinePage extends Schema.Component {
     backgroundImage: Attribute.Media;
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
-    text: Attribute.Component<'module.text-only'>;
+    text: Attribute.Component<'constructors.text-only'>;
   };
 }
 
-export interface ModuleTextOnly extends Schema.Component {
-  collectionName: 'components_module_text_onlies';
+export interface ModuleTexte extends Schema.Component {
+  collectionName: 'components_module_textes';
   info: {
     displayName: 'Texte seul';
     icon: 'feather';
     description: '';
   };
   attributes: {
-    textColor: Attribute.String &
-      Attribute.Required &
-      Attribute.CustomField<'plugin::color-picker.color'> &
-      Attribute.DefaultTo<'#000000'>;
-    text: Attribute.Text & Attribute.Required;
-    alignment: Attribute.Enumeration<
-      ['Gauche', 'Droite', 'Centr\u00E9', 'Justifi\u00E9']
-    > &
-      Attribute.Required &
-      Attribute.DefaultTo<'Gauche'>;
-    font: Attribute.Enumeration<
-      [
-        'Roboto (sans serif)',
-        'Open Sans (sans serif)',
-        'Montserrat (sans serif)',
-        'Lato (sans serif)',
-        'Roboto Condensed (sans serif)',
-        'Barlow Condensed (sans serif)',
-        'Saira Condensed (sans serif)',
-        'Merriweather (serif)',
-        'PT Serif (serif)',
-        'EB Garamond (serif)',
-        'Dancing Script (handwriting)',
-        'Pacifico (handwriting)',
-        'Caveat (handwriting)',
-        'Permanent Marker (handwriting)',
-        'Satisfy (handwriting)'
-      ]
-    > &
-      Attribute.Required &
-      Attribute.DefaultTo<'Roboto (sans serif)'>;
-    textPosition: Attribute.Enumeration<['Gauche', 'Droite']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'Droite'>;
-    fontSize: Attribute.Enumeration<
-      ['xLarge', 'Large', 'Medium', 'Small', 'xSmall']
-    > &
-      Attribute.Required &
-      Attribute.DefaultTo<'Large'>;
-    gap: Attribute.Integer &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 0;
-        },
-        number
-      > &
-      Attribute.DefaultTo<20>;
-  };
-}
-
-export interface ProfileAutresLiens extends Schema.Component {
-  collectionName: 'components_profile_autres_liens';
-  info: {
-    displayName: 'Autres liens';
-    icon: 'code';
-  };
-  attributes: {
-    name: Attribute.String;
-    url: Attribute.String;
-    logo: Attribute.Media;
+    text: Attribute.Component<'constructors.text-only'>;
+    backgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    backgroundImage: Attribute.Media;
   };
 }
 
@@ -169,19 +145,19 @@ export interface ProfileSocialMedias extends Schema.Component {
     twitter: Attribute.String;
     instagram: Attribute.String;
     linkedin: Attribute.String;
-    otherURLs: Attribute.Component<'profile.autres-liens', true>;
+    github: Attribute.String;
+    pinterest: Attribute.String;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'constructors.text-only': ConstructorsTextOnly;
       'module.colonne-multi-images': ModuleColonneMultiImages;
       'module.container': ModuleContainer;
-      'module.logos': ModuleLogos;
       'module.pleine-page': ModulePleinePage;
-      'module.text-only': ModuleTextOnly;
-      'profile.autres-liens': ProfileAutresLiens;
+      'module.texte': ModuleTexte;
       'profile.social-medias': ProfileSocialMedias;
     }
   }

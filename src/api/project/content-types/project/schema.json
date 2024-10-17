@@ -35,10 +35,10 @@
     "modules": {
       "type": "dynamiczone",
       "components": [
-        "module.text-only",
         "module.container",
         "module.pleine-page",
-        "module.colonne-multi-images"
+        "module.colonne-multi-images",
+        "module.texte"
       ]
     },
     "cover": {

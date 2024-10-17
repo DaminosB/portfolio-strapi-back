@@ -23,11 +23,11 @@
       "type": "string",
       "regex": "[(http(s)?):\\/\\/(www\\.)?a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)"
     },
-    "otherURLs": {
-      "displayName": "Autres liens",
-      "type": "component",
-      "repeatable": true,
-      "component": "profile.autres-liens"
+    "github": {
+      "type": "string"
+    },
+    "pinterest": {
+      "type": "string"
     }
   }
 }

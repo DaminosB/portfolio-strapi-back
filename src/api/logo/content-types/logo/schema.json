@@ -17,7 +17,8 @@
       "components": [
         "module.container",
         "module.pleine-page",
-        "module.colonne-multi-images"
+        "module.colonne-multi-images",
+        "constructors.text-only"
       ]
     },
     "thumbnail": {
