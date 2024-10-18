@@ -843,7 +843,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'module.pleine-page',
         'module.texte'
       ]
-    >;
+    > &
+      Attribute.Required;
     mainColor: Attribute.String &
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'> &
@@ -910,7 +911,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String & Attribute.Required;
     description: Attribute.Text;
     tags: Attribute.Relation<
       'api::project.project',
@@ -925,7 +926,8 @@ export interface ApiProjectProject extends Schema.CollectionType {
         'module.colonne-multi-images',
         'module.texte'
       ]
-    >;
+    > &
+      Attribute.Required;
     cover: Attribute.Media;
     mainColor: Attribute.String &
       Attribute.Required &

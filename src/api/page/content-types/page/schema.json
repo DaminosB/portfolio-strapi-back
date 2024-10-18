@@ -24,7 +24,8 @@
         "module.container",
         "module.pleine-page",
         "module.texte"
-      ]
+      ],
+      "required": true
     },
     "mainColor": {
       "type": "customField",

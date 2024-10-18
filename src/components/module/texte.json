@@ -10,7 +10,8 @@
     "text": {
       "type": "component",
       "repeatable": false,
-      "component": "constructors.text-only"
+      "component": "constructors.text-only",
+      "required": true
     },
     "backgroundColor": {
       "type": "customField",
@@ -18,11 +19,12 @@
       "customField": "plugin::color-picker.color"
     },
     "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

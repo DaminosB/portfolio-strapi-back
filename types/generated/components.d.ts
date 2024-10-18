@@ -41,7 +41,7 @@ export interface ConstructorsTextOnly extends Schema.Component {
     textPosition: Attribute.Enumeration<['Gauche', 'Droite']> &
       Attribute.Required &
       Attribute.DefaultTo<'Droite'>;
-    richText: Attribute.Blocks;
+    richText: Attribute.Blocks & Attribute.Required;
   };
 }
 
@@ -53,7 +53,7 @@ export interface ModuleColonneMultiImages extends Schema.Component {
     description: '';
   };
   attributes: {
-    medias: Attribute.Media;
+    medias: Attribute.Media & Attribute.Required;
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
   };
@@ -67,7 +67,7 @@ export interface ModuleContainer extends Schema.Component {
     icon: 'dashboard';
   };
   attributes: {
-    medias: Attribute.Media;
+    medias: Attribute.Media & Attribute.Required;
     gap: Attribute.Integer &
       Attribute.Required &
       Attribute.SetMinMax<
@@ -101,7 +101,7 @@ export interface ModulePleinePage extends Schema.Component {
     icon: 'picture';
   };
   attributes: {
-    medias: Attribute.Media;
+    medias: Attribute.Media & Attribute.Required;
     gap: Attribute.Integer &
       Attribute.Required &
       Attribute.SetMinMax<
@@ -126,7 +126,7 @@ export interface ModuleTexte extends Schema.Component {
     description: '';
   };
   attributes: {
-    text: Attribute.Component<'constructors.text-only'>;
+    text: Attribute.Component<'constructors.text-only'> & Attribute.Required;
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
     backgroundImage: Attribute.Media;

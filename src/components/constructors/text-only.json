@@ -57,7 +57,8 @@
       "default": "Droite"
     },
     "richText": {
-      "type": "blocks"
+      "type": "blocks",
+      "required": true
     }
   }
 }

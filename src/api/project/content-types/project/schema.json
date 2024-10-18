@@ -13,7 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
       "type": "text"
@@ -39,7 +40,8 @@
         "module.pleine-page",
         "module.colonne-multi-images",
         "module.texte"
-      ]
+      ],
+      "required": true
     },
     "cover": {
       "type": "media",
