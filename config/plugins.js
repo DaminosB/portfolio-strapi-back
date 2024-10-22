@@ -5,10 +5,19 @@ module.exports = ({ env }) => ({
         {
           uid: "api::project.project",
           draft: {
-            url: "https://charline-portfolio-front-production.up.railway.app/projects/{id}",
+            url: env("PROJECTS_PREVIEW_URL"),
           },
           published: {
-            url: "https://charline-portfolio-front-production.up.railway.app/projects/{id}",
+            url: env("PROJECTS_PREVIEW_URL"),
+          },
+        },
+        {
+          uid: "api::page.page",
+          draft: {
+            url: env("PAGES_PREVIEW_URL"),
+          },
+          published: {
+            url: env("PAGES_PREVIEW_URL"),
           },
         },
       ],
