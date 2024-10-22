@@ -45,6 +45,12 @@
       "type": "component",
       "repeatable": false,
       "component": "constructors.text-only"
+    },
+    "mediaBlocks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "constructors.media-configurator",
+      "required": true
     }
   }
 }

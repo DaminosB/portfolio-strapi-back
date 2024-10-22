@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_constructors_media_configurators",
+  "info": {
+    "displayName": "Bloc média",
+    "icon": "picture",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "mediaAsset": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string",
+      "regex": "[(http(s)?):\\/\\/(www\\.)?a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)"
+    },
+    "addToCarousel": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "labelColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": false,
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}
