@@ -7,15 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "medias": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ]
-    },
     "gap": {
       "type": "integer",
       "min": 0,

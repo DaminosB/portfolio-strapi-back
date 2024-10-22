@@ -72,7 +72,6 @@ export interface ModuleColonneMultiImages extends Schema.Component {
     description: '';
   };
   attributes: {
-    medias: Attribute.Media & Attribute.Required;
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
     mediaBlocks: Attribute.Component<'constructors.media-configurator', true> &
@@ -88,7 +87,6 @@ export interface ModuleContainer extends Schema.Component {
     icon: 'dashboard';
   };
   attributes: {
-    medias: Attribute.Media & Attribute.Required;
     gap: Attribute.Integer &
       Attribute.Required &
       Attribute.SetMinMax<
@@ -124,7 +122,6 @@ export interface ModulePleinePage extends Schema.Component {
     icon: 'picture';
   };
   attributes: {
-    medias: Attribute.Media & Attribute.Required;
     gap: Attribute.Integer &
       Attribute.Required &
       Attribute.SetMinMax<
