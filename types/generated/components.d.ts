@@ -1,9 +1,28 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ConstructorsMediaConfigurator extends Schema.Component {
+  collectionName: 'components_constructors_media_configurators';
+  info: {
+    displayName: 'Bloc m\u00E9dia';
+    icon: 'picture';
+    description: '';
+  };
+  attributes: {
+    mediaAsset: Attribute.Media & Attribute.Required;
+    label: Attribute.String;
+    link: Attribute.String;
+    addToCarousel: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    labelColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface ConstructorsTextOnly extends Schema.Component {
   collectionName: 'components_module_text_onlies';
   info: {
-    displayName: 'Texte';
+    displayName: 'Bloc texte';
     icon: 'file';
     description: '';
   };
@@ -56,6 +75,8 @@ export interface ModuleColonneMultiImages extends Schema.Component {
     medias: Attribute.Media & Attribute.Required;
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
+    mediaBlocks: Attribute.Component<'constructors.media-configurator', true> &
+      Attribute.Required;
   };
 }
 
@@ -90,6 +111,8 @@ export interface ModuleContainer extends Schema.Component {
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
     text: Attribute.Component<'constructors.text-only'>;
+    mediaBlocks: Attribute.Component<'constructors.media-configurator', true> &
+      Attribute.Required;
   };
 }
 
@@ -115,6 +138,8 @@ export interface ModulePleinePage extends Schema.Component {
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
     text: Attribute.Component<'constructors.text-only'>;
+    mediaBlocks: Attribute.Component<'constructors.media-configurator', true> &
+      Attribute.Required;
   };
 }
 
@@ -153,6 +178,7 @@ export interface ProfileSocialMedias extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'constructors.media-configurator': ConstructorsMediaConfigurator;
       'constructors.text-only': ConstructorsTextOnly;
       'module.colonne-multi-images': ModuleColonneMultiImages;
       'module.container': ModuleContainer;
