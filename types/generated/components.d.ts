@@ -8,7 +8,7 @@ export interface ConstructorsMediaConfigurator extends Schema.Component {
     description: '';
   };
   attributes: {
-    mediaAsset: Attribute.Media & Attribute.Required;
+    mediaAssets: Attribute.Media & Attribute.Required;
     label: Attribute.String;
     link: Attribute.String;
     addToCarousel: Attribute.Boolean &
