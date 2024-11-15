@@ -1042,6 +1042,9 @@ export interface ApiStyleStyle extends Schema.SingleType {
         number
       > &
       Attribute.DefaultTo<20>;
+    thumbnailsRatio: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'1/1'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
