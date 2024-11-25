@@ -52,7 +52,8 @@ export interface ConstructorsTextOnly extends Schema.Component {
         'Pacifico (handwriting)',
         'Caveat (handwriting)',
         'Permanent Marker (handwriting)',
-        'Satisfy (handwriting)'
+        'Satisfy (handwriting)',
+        'Courier Prime (mono)'
       ]
     > &
       Attribute.Required &

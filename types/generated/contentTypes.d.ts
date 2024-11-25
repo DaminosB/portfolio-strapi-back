@@ -1019,7 +1019,8 @@ export interface ApiStyleStyle extends Schema.SingleType {
         'Pacifico (handwriting)',
         'Caveat (handwriting)',
         'Permanent Marker (handwriting)',
-        'Satisfy (handwriting)'
+        'Satisfy (handwriting)',
+        'Courier Prime (mono)'
       ]
     > &
       Attribute.Required;
