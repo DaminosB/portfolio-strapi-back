@@ -1,5 +1,33 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ConstructorsBlocTitre extends Schema.Component {
+  collectionName: 'components_constructors_bloc_titres';
+  info: {
+    displayName: 'Bloc titre';
+    icon: 'feather';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    backgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    fontColor: Attribute.String &
+      Attribute.Required &
+      Attribute.CustomField<'plugin::color-picker.color'> &
+      Attribute.DefaultTo<'#000000'>;
+    backgroundOpacity: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+          max: 100;
+        },
+        number
+      > &
+      Attribute.DefaultTo<100>;
+  };
+}
+
 export interface ConstructorsMediaConfigurator extends Schema.Component {
   collectionName: 'components_constructors_media_configurators';
   info: {
@@ -112,6 +140,7 @@ export interface ModuleContainer extends Schema.Component {
     text: Attribute.Component<'constructors.text-only'>;
     mediaBlocks: Attribute.Component<'constructors.media-configurator', true> &
       Attribute.Required;
+    titleBlock: Attribute.Component<'constructors.bloc-titre'>;
   };
 }
 
@@ -138,6 +167,7 @@ export interface ModulePleinePage extends Schema.Component {
     text: Attribute.Component<'constructors.text-only'>;
     mediaBlocks: Attribute.Component<'constructors.media-configurator', true> &
       Attribute.Required;
+    titleBlock: Attribute.Component<'constructors.bloc-titre'>;
   };
 }
 
@@ -153,6 +183,7 @@ export interface ModuleTexte extends Schema.Component {
     backgroundColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
     backgroundImage: Attribute.Media;
+    titleBlock: Attribute.Component<'constructors.bloc-titre'>;
   };
 }
 
@@ -176,6 +207,7 @@ export interface ProfileSocialMedias extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'constructors.bloc-titre': ConstructorsBlocTitre;
       'constructors.media-configurator': ConstructorsMediaConfigurator;
       'constructors.text-only': ConstructorsTextOnly;
       'module.colonne-multi-images': ModuleColonneMultiImages;

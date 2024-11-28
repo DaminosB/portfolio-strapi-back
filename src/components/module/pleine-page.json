@@ -36,6 +36,11 @@
       "repeatable": true,
       "component": "constructors.media-configurator",
       "required": true
+    },
+    "titleBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "constructors.bloc-titre"
     }
   }
 }
