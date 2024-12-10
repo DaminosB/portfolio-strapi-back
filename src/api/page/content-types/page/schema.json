@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "string",
       "required": true,
       "unique": true
@@ -48,6 +48,9 @@
       "required": true,
       "customField": "plugin::color-picker.color",
       "default": "#FFFFFF"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

@@ -835,7 +835,7 @@ export interface ApiPagePage extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
     modules: Attribute.DynamicZone<
       [
         'module.colonne-multi-images',
@@ -854,6 +854,7 @@ export interface ApiPagePage extends Schema.CollectionType {
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#FFFFFF'>;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
