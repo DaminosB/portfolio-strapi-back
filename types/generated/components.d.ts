@@ -9,22 +9,12 @@ export interface ConstructorsBlocTitre extends Schema.Component {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    backgroundColor: Attribute.String &
+    textBorderColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
     fontColor: Attribute.String &
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#000000'>;
-    backgroundOpacity: Attribute.Integer &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 0;
-          max: 100;
-        },
-        number
-      > &
-      Attribute.DefaultTo<100>;
   };
 }
 

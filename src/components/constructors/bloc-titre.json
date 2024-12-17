@@ -11,7 +11,7 @@
       "type": "string",
       "required": true
     },
-    "backgroundColor": {
+    "textBorderColor": {
       "type": "customField",
       "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
       "customField": "plugin::color-picker.color"
@@ -22,13 +22,6 @@
       "customField": "plugin::color-picker.color",
       "required": true,
       "default": "#000000"
-    },
-    "backgroundOpacity": {
-      "type": "integer",
-      "min": 0,
-      "max": 100,
-      "required": true,
-      "default": 100
     }
   }
 }
