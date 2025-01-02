@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "google_fonts",
+  "info": {
+    "singularName": "google-font",
+    "pluralName": "google-fonts",
+    "displayName": "googleFont"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fontName": {
+      "type": "string"
+    },
+    "fontUrl": {
+      "type": "string"
+    },
+    "fontType": {
+      "type": "enumeration",
+      "enum": [
+        "Sans Serif",
+        "Serif",
+        "Monospaced",
+        "Cursive",
+        "Fantasy"
+      ]
+    }
+  }
+}

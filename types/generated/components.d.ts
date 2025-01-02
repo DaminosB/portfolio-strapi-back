@@ -54,28 +54,11 @@ export interface ConstructorsTextOnly extends Schema.Component {
     > &
       Attribute.Required &
       Attribute.DefaultTo<'Gauche'>;
-    font: Attribute.Enumeration<
-      [
-        'Roboto (sans serif)',
-        'Open Sans (sans serif)',
-        'Montserrat (sans serif)',
-        'Lato (sans serif)',
-        'Roboto Condensed (sans serif)',
-        'Barlow Condensed (sans serif)',
-        'Saira Condensed (sans serif)',
-        'Merriweather (serif)',
-        'PT Serif (serif)',
-        'EB Garamond (serif)',
-        'Dancing Script (handwriting)',
-        'Pacifico (handwriting)',
-        'Caveat (handwriting)',
-        'Permanent Marker (handwriting)',
-        'Satisfy (handwriting)',
-        'Courier Prime (mono)'
-      ]
-    > &
-      Attribute.Required &
-      Attribute.DefaultTo<'Roboto (sans serif)'>;
+    font: Attribute.Relation<
+      'constructors.text-only',
+      'oneToOne',
+      'api::google-font.google-font'
+    >;
     textPosition: Attribute.Enumeration<['Gauche', 'Droite']> &
       Attribute.Required &
       Attribute.DefaultTo<'Droite'>;

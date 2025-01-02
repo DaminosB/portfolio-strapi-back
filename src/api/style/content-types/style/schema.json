@@ -71,6 +71,11 @@
       "regex": "^[0-9]+/[0-9]+$",
       "required": true,
       "default": "1/1"
+    },
+    "font": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::google-font.google-font"
     }
   }
 }

@@ -26,27 +26,9 @@
       "default": "Gauche"
     },
     "font": {
-      "type": "enumeration",
-      "enum": [
-        "Roboto (sans serif)",
-        "Open Sans (sans serif)",
-        "Montserrat (sans serif)",
-        "Lato (sans serif)",
-        "Roboto Condensed (sans serif)",
-        "Barlow Condensed (sans serif)",
-        "Saira Condensed (sans serif)",
-        "Merriweather (serif)",
-        "PT Serif (serif)",
-        "EB Garamond (serif)",
-        "Dancing Script (handwriting)",
-        "Pacifico (handwriting)",
-        "Caveat (handwriting)",
-        "Permanent Marker (handwriting)",
-        "Satisfy (handwriting)",
-        "Courier Prime (mono)"
-      ],
-      "default": "Roboto (sans serif)",
-      "required": true
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::google-font.google-font"
     },
     "textPosition": {
       "type": "enumeration",

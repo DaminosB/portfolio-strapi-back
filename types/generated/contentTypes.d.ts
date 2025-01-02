@@ -788,6 +788,39 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiGoogleFontGoogleFont extends Schema.CollectionType {
+  collectionName: 'google_fonts';
+  info: {
+    singularName: 'google-font';
+    pluralName: 'google-fonts';
+    displayName: 'googleFont';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    fontName: Attribute.String;
+    fontUrl: Attribute.String;
+    fontType: Attribute.Enumeration<
+      ['Sans Serif', 'Serif', 'Monospaced', 'Cursive', 'Fantasy']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::google-font.google-font',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::google-font.google-font',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLogoLogo extends Schema.SingleType {
   collectionName: 'logos';
   info: {
@@ -1047,6 +1080,11 @@ export interface ApiStyleStyle extends Schema.SingleType {
     thumbnailsRatio: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'1/1'>;
+    font: Attribute.Relation<
+      'api::style.style',
+      'oneToOne',
+      'api::google-font.google-font'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1109,6 +1147,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::google-font.google-font': ApiGoogleFontGoogleFont;
       'api::logo.logo': ApiLogoLogo;
       'api::page.page': ApiPagePage;
       'api::profile.profile': ApiProfileProfile;
