@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_constructors_cover_units",
+  "info": {
+    "displayName": "Bloc cover",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "text": {
+      "type": "string"
+    },
+    "overlayImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "disposition": {
+      "type": "enumeration",
+      "enum": [
+        "Texte | Image",
+        "Image | Texte"
+      ],
+      "required": true,
+      "default": "Texte | Image"
+    }
+  }
+}

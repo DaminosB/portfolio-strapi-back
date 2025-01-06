@@ -64,6 +64,11 @@
       "required": true,
       "customField": "plugin::color-picker.color",
       "default": "#FFFFFF"
+    },
+    "coversBlock": {
+      "type": "component",
+      "repeatable": true,
+      "component": "constructors.cover-unit"
     }
   }
 }

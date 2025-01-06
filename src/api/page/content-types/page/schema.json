@@ -51,6 +51,11 @@
     },
     "description": {
       "type": "text"
+    },
+    "coversBlock": {
+      "type": "component",
+      "repeatable": true,
+      "component": "constructors.cover-unit"
     }
   }
 }

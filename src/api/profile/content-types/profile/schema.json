@@ -45,6 +45,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "coversBlock": {
+      "type": "component",
+      "repeatable": true,
+      "component": "constructors.cover-unit"
     }
   }
 }

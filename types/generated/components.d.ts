@@ -18,6 +18,22 @@ export interface ConstructorsBlocTitre extends Schema.Component {
   };
 }
 
+export interface ConstructorsCoverUnit extends Schema.Component {
+  collectionName: 'components_constructors_cover_units';
+  info: {
+    displayName: 'Bloc cover';
+    description: '';
+  };
+  attributes: {
+    backgroundImage: Attribute.Media;
+    text: Attribute.String;
+    overlayImage: Attribute.Media;
+    disposition: Attribute.Enumeration<['Texte | Image', 'Image | Texte']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'Texte | Image'>;
+  };
+}
+
 export interface ConstructorsMediaConfigurator extends Schema.Component {
   collectionName: 'components_constructors_media_configurators';
   info: {
@@ -181,6 +197,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'constructors.bloc-titre': ConstructorsBlocTitre;
+      'constructors.cover-unit': ConstructorsCoverUnit;
       'constructors.media-configurator': ConstructorsMediaConfigurator;
       'constructors.text-only': ConstructorsTextOnly;
       'module.colonne-multi-images': ModuleColonneMultiImages;

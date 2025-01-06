@@ -888,6 +888,7 @@ export interface ApiPagePage extends Schema.CollectionType {
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#FFFFFF'>;
     description: Attribute.Text;
+    coversBlock: Attribute.Component<'constructors.cover-unit', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -916,6 +917,7 @@ export interface ApiProfileProfile extends Schema.SingleType {
     telephone: Attribute.String;
     logo: Attribute.Media;
     cover: Attribute.Media;
+    coversBlock: Attribute.Component<'constructors.cover-unit', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -971,6 +973,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
       Attribute.Required &
       Attribute.CustomField<'plugin::color-picker.color'> &
       Attribute.DefaultTo<'#FFFFFF'>;
+    coversBlock: Attribute.Component<'constructors.cover-unit', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
